@@ -1,14 +1,9 @@
 using namespace std;
 
 #include <iostream>
-#include <utility>
-#include <cstdlib>
 #include <cassert>
 #include <vector>
 #include <set>
-#include <iostream>
-#include <sstream>
-#include <fstream>
 
 struct pos: pair<int, int> 
 {
