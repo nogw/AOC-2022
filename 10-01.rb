@@ -10,7 +10,7 @@ class CPU
   def execute
     input = File.read(@filename).split("\n")
     input.each { |cmd| public_send(*cmd.split(' ')) }
-    crt    
+    signal_strength
   end
 
   def noop(_arg = nil)
