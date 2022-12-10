@@ -32,10 +32,10 @@ fun parseInput(data: String): Entry {
   val fst = Regex("""\p{Sc}\s*cd\s+([^.\s]+)\n\p{Sc}\s+ls""").replace(data, "CDLS $1")
   val snd = Regex("""\p{Sc}\s*cd\s+\.\.""").replace(fst, "BACK")
 
-  val lines = snd.split('\n').filterNot { it.startsWith("dir") }
+  val splited_lines = snd.split('\n').filterNot { it.startsWith("dir") }
 
   @Suppress("NON_TAIL_RECURSIVE_CALL")
-  tailrec fun aux(lines: List<String> = lines, entries: List<Entry> = emptyList()): Pair<List<String>, List<Entry>> = when {
+  tailrec fun aux(lines: List<String> = splited_lines, entries: List<Entry> = emptyList()): Pair<List<String>, List<Entry>> = when {
     lines.isEmpty() && entries.size == 1 && entries.first().name == "/" -> Pair(lines, entries)
     lines.isEmpty() || lines.first() == "BACK" -> Pair(lines.drop(1), entries)
 
