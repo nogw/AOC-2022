@@ -1,4 +1,4 @@
-module Day11Part1
+module Day11Part2
   mutable struct Monkey
     number::Int64
     items::Vector{Int64}
@@ -62,5 +62,5 @@ module Day11Part1
     return reduce(*, sort(map(m -> m.inspections, monkeys), rev=true)[1:2])
   end
   
-  read("input.txt", String) |> parsemonkeys |> monkeys -> solve(monkeys, 20, worrylevel -> worrylevel ÷ 3) |> println
+  read("input.txt", String) |> parsemonkeys |> monkeys -> reduce(*, map(m -> m.div, monkeys)) |> mod -> solve(monkeys, 10000, worrylevel -> worrylevel % mod) |> println
 end
