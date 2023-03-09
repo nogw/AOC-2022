@@ -1,3 +1,4 @@
-*.erl linguist-detectable=false
-*.java linguist-detectable=false
-*.cpp linguist-detectable=true
+# cute repository ;D
+
+* linguist-language=cpp
+
