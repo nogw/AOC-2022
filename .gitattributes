@@ -1,2 +1,3 @@
-*.* linguist-detectable=false
+*.erl linguist-detectable=false
+*.java linguist-detectable=false
 *.js linguist-detectable=true
